@@ -1,0 +1,23 @@
+<section>
+  <mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav style="width: 200px" class="no-select">
+      <mat-nav-list>
+        <mat-list-item (click)="this.woW=this.woW+1">{{wow()}}</mat-list-item>
+        <mat-list-item (click)="sidenav.toggle(); this.router.navigateByUrl('/hosts')"><mat-icon matListItemIcon>dns</mat-icon>Hosts</mat-list-item>
+        <mat-list-item (click)="sidenav.toggle()"><mat-icon matListItemIcon>token</mat-icon>Tokens</mat-list-item>
+        <mat-list-item (click)="sidenav.toggle()"><mat-icon matListItemIcon>key</mat-icon>Administration</mat-list-item>
+        <mat-divider/>
+        <mat-list-item onclick="window.open('https://paint-board.github.io')"><mat-icon matListItemIcon>open_in_new</mat-icon>About</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      <span>{{title}}</span>
+    </mat-toolbar>
+
+    <button mat-fab style="position:fixed;right: 30px;bottom: 30px">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-sidenav-container>
+</section>
